@@ -1,0 +1,236 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face{
+    font-family: myfont;
+    src: 
+        url('../fonts/CustomCraft-Regular.otf') format('opentype'), 
+        url('../fonts/CustomCraft-Regular.ttf') format('truetype'), 
+        url('../fonts/CustomCraft-Regular.woff') format('woff');
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+     background: url(../imagenes/medicamentos.jpg);
+}
+.boton{
+    margin-top: 5px;
+    line-height: 30px;
+    padding: 6px;
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 2px solid white;
+    display: block;
+    width: 100px ;
+    text-align: center;
+    margin: auto;
+}
+.boton:hover{
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    box-shadow: 0 3px 10px rgb(150, 150, 150);
+}
+
+.row::after{
+    content: "";
+    clear: both;
+    display: table;
+
+}
+
+[class*="col-"]{
+    float: left;
+    padding: 8px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.fondito{
+    background-color: #fff;   
+}
+.fondo{
+    background-color: beige;
+}
+.contenedor{
+    align-content: center;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    background: #DFDFDF;
+
+}
+
+/*.showcase{
+    padding: 10px;
+    --background-image: url("../img/Orangután.jpg");
+    background-position: center;
+    box-sizing: border-box;
+}*/
+.showcase img{
+    height: 100px;
+    margin: auto;
+    display: block;
+}
+.showcase h1{
+    font-family: myfont;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 80px;
+    line-height: 150px;
+}
+.showcase .btn{
+    font-family: myfont;
+    color: black;
+    padding: 5px 20px 5px 20px;
+    text-align: center;
+    font-size: 20pt;
+}
+.btn{
+    color: black;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    font-size: 12pt;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li a {
+    display: block;
+    padding: 10px 15px;
+    background-color: dodgerblue;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+.activo{
+    background-color: white;
+    color: dodgerblue;
+    font-weight: bold;
+}
+.activo:hover{
+    color: white;
+}
+.img{
+    padding: 10px;
+    border-top-width: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border: 1px solid black;
+}
+li a:hover{
+    background-color: blue;
+}
+section{
+    margin-bottom: 10px;
+}
+
+aside ul{
+    list-style: none;
+}
+aside a{
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    background-color: dodgerblue;
+    border: 1px solid white;
+}
+aside a:hover{
+    background-color: blue;
+}
+aside h2, section h2{
+    text-align: center;
+    color: rgb(150, 150, 150);
+}
+
+article{
+    border: 1px solid rgb(150, 150, 150);
+    border-radius: 10px;
+}
+article:nth-child(even){
+    background-color: rgb(230,230,230);
+}
+article img{
+    width: 100%;
+    height: auto;
+}
+article h3{
+    margin: 5px;
+    text-align: center;
+}
+article p{
+    text-align: justify;
+}
+
+footer p{
+    padding: 10px;
+    background-color: dodgerblue;
+    text-align: center;
+    color: white;
+}
+
+@media only screen and (min-width: 600px){ /* TABLET */
+    .col-t-1{width: 8.33%;}
+    .col-t-2{width: 16.66%;}
+    .col-t-3{width: 25%;}
+    .col-t-4{width: 33.33%;}
+    .col-t-5{width: 41.66%;}
+    .col-t-6{width: 50%;}
+    .col-t-7{width: 58.33%;}
+    .col-t-8{width: 66.66%;}
+    .col-t-9{width: 75%;}
+    .col-t-10{width: 83.33%;}
+    .col-t-11{width: 91.66%;}
+    .col-t-12{width: 100%;}
+
+    .showcase img, .showcase h1{
+        display: inline;
+    }
+    article:nth-child(even){
+        background-color: inherit;
+    }
+
+}
+@media only screen and (min-width: 768px){ /* ESCRITORIO */
+    .col-1{width: 8.33%;}
+    .col-2{width: 16.66%;}
+    .col-3{width: 25%;}
+    .col-4{width: 33.33%;}
+    .col-5{width: 41.66%;}
+    .col-6{width: 50%;}
+    .col-7{width: 58.33%;}
+    .col-8{width: 66.66%;}
+    .col-9{width: 75%;}
+    .col-10{width: 83.33%;}
+    .col-11{width: 91.66%;}
+    .col-12{width: 100%;}
+
+    nav li{
+        float: left;
+    }
+    .contenedor{
+        width: 90%;
+    }
+    nav li a b{
+        display: none;
+    }
+    nav li a:hover b{
+        display: inline;
+    }
+}

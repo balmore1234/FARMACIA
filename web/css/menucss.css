@@ -1,0 +1,21 @@
+
+.galeria{
+   
+    margin: auto;
+    list-style: none;
+    padding: 100px;
+    box-sizing: border-box;
+    float: left;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    vertical-align: middle;
+    display: block; 
+    margin-left: 23%;
+    
+      
+}
+img.grande{
+    width: 250px;
+    height: 250px;
+}
+ 
