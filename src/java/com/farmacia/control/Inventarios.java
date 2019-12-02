@@ -96,7 +96,7 @@ public class Inventarios extends HttpServlet {
                 Tabla tab = new Tabla(inventarios, //array que contiene los datos
                 "50%", //ancho de la tabla px | % 
                 Tabla.STYLE.TABLE01, //estilo de la tabla
-                Tabla.ALIGN.LEFT,  // alineacion de la tabla
+                Tabla.ALIGN.CENTER,  // alineacion de la tabla
                 cabeceras); //array con las cabeceras de la tabla
 
                 //boton eliminar

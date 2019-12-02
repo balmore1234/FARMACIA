@@ -14,19 +14,19 @@
             </div>
             <div class="form-group">
                 <label>Nombre Proveedor :</label>
-                <input type="text" class="form-control"  name="txtnombre" id="txtnombre" value="${Proveedor.getNombre()}"/>
+                <input type="text" class="form-control" onkeypress="return soloLetras(event)" name="txtnombre" id="txtnombre" value="${Proveedor.getNombre()}" required autofocus/>
             </div>
             <div class="form-group">
                 <label>Dirección :</label>
-                <input type="text" class="form-control"  name="txtdireccion" id="txtdireccion" value="${Proveedor.getDireccion()}"/>
+                <input type="text" class="form-control"  name="txtdireccion" id="txtdireccion" value="${Proveedor.getDireccion()}" required autofocus/>
             </div>
             <div class="form-group">
                 <label>Telefono :</label>
-                <input type="text" class="form-control"  name="txttelefono" id="txttelefono" value="${Proveedor.getTelefono()}"/>
+                <input type="text" class="form-control"  onKeyPress="return soloNumeros(event)" name="txttelefono" maxlength="8" id="txttelefono" value="${Proveedor.getTelefono()}" required autofocus/>
             </div>
             <div class="form-group">
                 <label>Correo :</label>
-                <input type="text" class="form-control"  name="txtcorreo" id="txtcorreo" value="${Proveedor.getCorreo()}"/>
+                <input type="text" class="form-control"  name="txtcorreo"  onKeyUp="javascript:validateMail('txtcorreo')" id="txtcorreo" value="${Proveedor.getCorreo()}" required autofocus/>
             </div>
             <br/>
             <div class="buttons">
@@ -48,5 +48,41 @@
         }
         return true;
     }
+     function soloLetras(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+       function validateMail(idMail){
+	//Creamos un objeto 
+	object=document.getElementById(idMail);
+	valueForm=object.value;
+	// Patron para el correo
+	var patron=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+	if(valueForm.search(patron)==0)	{
+		//Mail correcto
+		object.style.color="#000";
+		return;
+	}
+	//Mail incorrecto
+	object.style.color="#f00";
+}
+function soloNumeros(e){
+	var key = window.Event ? e.which : e.keyCode
+	return (key >= 48 && key <= 57)
+}
 </script>
 <%@include file="../_down.jsp"%>

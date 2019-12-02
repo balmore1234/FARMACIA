@@ -3,9 +3,14 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="43"/>
-	<parameter name="Nombre" class="java.lang.String"/>
+	<parameter name="IdCategoria" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[select * from Inventario;]]>
+		<![CDATA[select 
+                       IdProducto,p.Nombre,precio,Fecha_Vencimiento,cate.Nombre as Categoria, esta.Nombre as Presentaciones
+                        from Inventario p
+                        inner join Categoria  cate on cate.IdCategoria = p.IdCategoria
+                        inner join Presentaciones  esta on esta.IdPresentacion = p.IdPresentacion
+and $P{IdCategoria}]]>
 	</queryString>
 	<field name="IdProducto" class="java.lang.Integer"/>
 	<field name="Nombre" class="java.lang.String"/>
@@ -25,27 +30,27 @@
 	<columnHeader>
 		<band height="61" splitType="Stretch">
 			<staticText>
-				<reportElement x="10" y="2" width="100" height="20" uuid="fa8540ea-7e33-42b6-884a-6c434e78ef10"/>
+				<reportElement x="21" y="12" width="57" height="20" uuid="411ea005-df68-44da-961f-37ec6dd8dc10"/>
 				<text><![CDATA[IdProducto]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="110" y="2" width="60" height="20" uuid="0e729944-7e4c-4477-b717-e3654c348ccf"/>
+				<reportElement x="95" y="12" width="100" height="20" uuid="a8c8bc9a-e1f2-417d-ad50-1631bd3c5767"/>
 				<text><![CDATA[Nombre]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="170" y="4" width="50" height="20" uuid="19bbade2-8a18-4662-8ec1-88f744899bc4"/>
+				<reportElement x="206" y="12" width="56" height="20" uuid="3ac42e5c-6f10-44a1-aec3-bc666ddf9014"/>
 				<text><![CDATA[precio]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="220" y="2" width="100" height="20" uuid="6e4149d1-1e7d-4011-9fb1-9681a66d171c"/>
+				<reportElement x="273" y="12" width="82" height="20" uuid="a0ae2362-134e-4c0d-8839-cdc10b3b0866"/>
 				<text><![CDATA[Fecha_Vencimiento]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="320" y="2" width="100" height="20" uuid="019235cb-8b73-4382-b466-ed3aadd5463c"/>
+				<reportElement x="367" y="12" width="71" height="20" uuid="975db355-5fa6-4997-b2fb-51fc0395c915"/>
 				<text><![CDATA[IdCategoria]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="420" y="2" width="100" height="20" uuid="b35fba51-e9a6-46e3-9ae6-aea042c7fc98"/>
+				<reportElement x="455" y="12" width="86" height="20" uuid="7e57110c-a119-4601-a175-fc43a903d0b8"/>
 				<text><![CDATA[IdPresentacion]]></text>
 			</staticText>
 		</band>
@@ -53,27 +58,27 @@
 	<detail>
 		<band height="125" splitType="Stretch">
 			<textField>
-				<reportElement x="10" y="28" width="100" height="20" uuid="90875f54-7682-4ec4-9c17-65733c464f13"/>
+				<reportElement x="21" y="9" width="74" height="20" uuid="1c3c0ac5-43a8-4de5-987e-3d8b27d5aa06"/>
 				<textFieldExpression><![CDATA[$F{IdProducto}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="110" y="28" width="60" height="20" uuid="69bdcc0c-f8d2-47c6-8241-ab0a8bd439a4"/>
+				<reportElement x="106" y="9" width="100" height="20" uuid="98caa051-4f7a-4683-b575-e418752dceb8"/>
 				<textFieldExpression><![CDATA[$F{Nombre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="170" y="28" width="50" height="20" uuid="321a43bd-ee97-43b4-a41d-81ba6d601f35"/>
+				<reportElement x="206" y="9" width="56" height="20" uuid="5bdacf89-334f-4007-b032-9cac04cc361c"/>
 				<textFieldExpression><![CDATA[$F{precio}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="220" y="28" width="100" height="20" uuid="3411c711-7367-40a5-b1de-9e650772c120"/>
+				<reportElement x="273" y="14" width="65" height="20" uuid="07459e09-4012-4207-80d2-58acde36715a"/>
 				<textFieldExpression><![CDATA[$F{Fecha_Vencimiento}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="320" y="30" width="100" height="20" uuid="1a3474f0-dae6-4b22-851f-79c52d11cbfe"/>
+				<reportElement x="351" y="14" width="87" height="20" uuid="7824e50b-0354-4488-bff2-71813846d0aa"/>
 				<textFieldExpression><![CDATA[$F{IdCategoria}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="420" y="37" width="100" height="20" uuid="500d3bac-7cf9-4d8c-b4fe-169a42446baa"/>
+				<reportElement x="455" y="14" width="86" height="20" uuid="44d7ac92-40d4-4f38-adbd-47217039dc02"/>
 				<textFieldExpression><![CDATA[$F{IdPresentacion}]]></textFieldExpression>
 			</textField>
 		</band>

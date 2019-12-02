@@ -27,11 +27,11 @@
             </div>
             <div class="form-group">
                 <label>Precio :</label>
-                <input type="text" class="form-control"  placeholder="Ingrese el precio" required autofocus name="txtprecio" id="txtprecio" value="${Inventario.getPrecio()}"/>
+                <input type="text" class="form-control"  placeholder="Ingrese el precio" required autofocus name="txtprecio" id="txtprecio" value="${Inventario.getPrecio()}" required autofocus/>
             </div>
             <div class="form-group">
                 <label>Fecha de vencimiento :</label>
-                <input class="form-control" type="Date"   name="txtfecha" id="txtfecha" value="${Inventario.getFecha_Vencimiento()}"  required />
+                <input class="form-control" type="Date"   name="txtfecha" id="txtfecha" value="${Inventario.getFecha_Vencimiento()}"  required required autofocus/>
 
             </div>
             <div class="col-xs-12 col-md-9">
@@ -39,7 +39,7 @@
                     <label for="">Categoria :</label>
                     <div class="input-group">
                         <input type="text"    class="form-control" name="txtidcategoria" id="txtidcategoria" value="${Inventario.getIdCategoria()}"  readonly="readonly">
-                        <input type="text" class="form-control" name="txtcategoria" id="txtcategoria" readonly="readonly" value="${Categoria.getNombre()}" placeholder="Elija una categoria" required>
+                        <input type="text" class="form-control" name="txtcategoria" id="txtcategoria" readonly="readonly" value="${Categoria.getNombre()}" placeholder="Elija una categoria" required autofocus>
                         <input type="button" value="..." class="btn btn-success" onclick="abrirVentana('${pageContext.servletContext.contextPath}/Inventarios?accion=listado_categorias');">
 
 
@@ -49,7 +49,7 @@
                     <label for="">Presentación :</label>
                     <div class="input-group">
                         <input type="text"   class="form-control" name="txtidpresentacion" id="txtidpresentacion" value="${Inventario.getIdPresentacion()}" readonly="readonly">
-                        <input type="text" class="form-control" name="txtpresentacion" id="txtpresentacion" readonly="readonly" value="${Presentaciones.getNombre()}" placeholder="Elija una presentacion" required>
+                        <input type="text" class="form-control" name="txtpresentacion" id="txtpresentacion" readonly="readonly" value="${Presentaciones.getNombre()}" placeholder="Elija una presentacion" required autofocus>
                         <input type="button" value="..." class="btn btn-success" onclick="abrirVentana('${pageContext.servletContext.contextPath}/Inventarios?accion=listado_presentacion');">
 
 

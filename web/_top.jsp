@@ -26,42 +26,44 @@
 
     </head>
     <body >
-      <div class="contenedor">
-        <section>
-            <div class="row">
-                <div class="col-sm-4">
-                   
-                        <img src="imagenes/logo.png" class="figure-img img-fluid rounded">
-                      
-                </div>
-               
-            </div>
-        </section> 
-        <section class="contenedor">
-            <div class="row">
-                <div class="col-sm-8">
-                    <figure class="figure">
-                </div>
-                <div class="col-sm-4">
-                    <h6>Usuario: <%= sesion.getAttribute("Nombre")%>
-                        <strong>[<%= sesion.getAttribute("Usuario")%>]</strong>
-                        <a href="Principal?accion=logout">Cerrar Sesion</a>
-                    </h6> 
-                </div>
-            </div>
-        </section> 
-                        <div class="contenedor">
-            <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-                <ul class="navbar-nav">
-                    <c:forEach var="menu" items="${MenuPrincipal}">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="${pageContext.servletContext.contextPath}${menu.url}?op=${menu.idmenu}">${menu.menu}</a>
-                        </li>
+        <div class="contenedor">
+            <section>
+                <div class="row">
+                    <div class="col-sm-4">
 
-                    </c:forEach>
-                </ul>
-            </nav>
-        </div>
-      </div>               
+                        <img src="imagenes/logo.png" class="figure-img img-fluid rounded">
+
+                    </div>
+
+                </div>
+            </section> 
+            <section class="contenedor">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <figure class="figure">
+                    </div>
+                    <div class="col-sm-4">
+                        <h6>Usuario: <%= sesion.getAttribute("Nombre")%>
+                            <strong>[<%= sesion.getAttribute("Usuario")%>]</strong>
+                            <a href="Principal?accion=logout">Cerrar Sesion</a>
+                        </h6> 
+                    </div>
+                </div>
+            </section> 
+            <div class="contenedor">
+
+                <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <c:forEach var="menu" items="${MenuPrincipal}">
+                            <li class="nav-item">
+                                <a class="navbar-brand" href="${pageContext.servletContext.contextPath}${menu.url}?op=${menu.idmenu}">${menu.menu}</a>
+                            </li>
+
+                        </c:forEach>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>               
     </body>
 </html>

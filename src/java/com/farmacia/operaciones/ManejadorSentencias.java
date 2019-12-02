@@ -4,10 +4,7 @@ package com.farmacia.operaciones;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author JOSE
- */
+
 public class ManejadorSentencias {
 
     private final List<FieldClass> campos;

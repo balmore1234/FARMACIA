@@ -14,12 +14,12 @@
             </div>
             <div class="form-group">
                 <label>Nombres :</label>
-                <input type="text" class="form-control"  name="txtnombre" id="txtNombre" value="${Categoria.getNombre()}" minlength="5" maxlength="40"  placeholder="Escribe tu nombre completo" required autofocus>
+                <input type="text" class="form-control" onkeypress="return soloLetras(event)" name="txtnombre" id="txtNombre" value="${Categoria.getNombre()}" minlength="5" maxlength="40"  placeholder="Ingrese nombre de la Categoria" required autofocus>
             </div>                     
 
 </div>
           
-            <br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
             <div class="buttons">
                 <ul><input type="submit"   class="btn btn-primary" value="Guardar" name="guardar"/>
                     <li><a href="#" class="btn" onclick="javascript: return window.history.back()">Regresar</a></li>
@@ -39,5 +39,24 @@
         }
         return true;
     }
+    function soloLetras(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+    
 </script>
  <%@include file="../_down.jsp"%>

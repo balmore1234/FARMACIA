@@ -39,10 +39,10 @@
     
                 <!--usuario -->
                 <label for="username">Usuario</label>
-                <input type="text"  class="form-control input_user" placeholder="Ingrese usuario" name="txtUsuario" required/>
+                <input type="text"  class="form-control input_user" placeholder="Ingrese usuario" name="txtUsuario" required autofocus/>
                 <!--contraseña -->
                 <label for="password">Contraseña</label>
-                <input type="password"  class="form-control input_pass" placeholder="Ingrese contraseña" name="txtClave" required/><br>
+                <input type="password"  class="form-control input_pass" placeholder="Ingrese contraseña" name="txtClave" required autofocus/><br>
                 <!-- boton -->
                 
                 <input type="submit" class="btn btn-primary" value="Ingresar" name="btnEntrar"/>

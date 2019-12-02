@@ -13,20 +13,6 @@
         p.type = (c.checked) ? "text" : "password";
     }
 
-   function validateMail(idMail){
-	//Creamos un objeto 
-	object=document.getElementById(idMail);
-	valueForm=object.value;
-	// Patron para el correo
-	var patron=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-	if(valueForm.search(patron)==0)	{
-		//Mail correcto
-		object.style.color="#000";
-		return;
-	}
-	//Mail incorrecto
-	object.style.color="#f00";
-}
 
     function soloNumeros(e) {
         var key = window.Event ? e.which : e.keyCode
@@ -43,7 +29,7 @@
             <h1>Usuarios</h1>
             <h2>Complete la informacion</h2><br/><br/>
             <div class="form-group">
-                <label>Id Usuario :</label>
+                <label>Nombre de  Usuario :</label>
                 <input type="text" class="form-control"  name="txtIdusu" value="${usuario.getIdusuario()}" minlength="5" maxlength="40"  placeholder="Escribe tu nombre de usuario" required autofocus>
             </div>
             <div class="form-group">

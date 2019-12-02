@@ -14,6 +14,12 @@ body{
     font-family: Arial, Helvetica, sans-serif;
      background: url(../imagenes/medicamentos.jpg);
 }
+h1{
+    color:#219DD7 ;
+}
+h6{
+    color:#050C0F ;
+}
 .boton{
     margin-top: 5px;
     line-height: 30px;
@@ -99,22 +105,7 @@ body{
     font-size: 12pt;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
 
-nav li a {
-    display: block;
-    padding: 10px 15px;
-    background-color: dodgerblue;
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    font-size: 18px;
-}
 .activo{
     background-color: white;
     color: dodgerblue;
@@ -132,16 +123,12 @@ nav li a {
     margin-right: 10px;
     border: 1px solid black;
 }
-li a:hover{
-    background-color: blue;
-}
+
 section{
     margin-bottom: 10px;
 }
 
-aside ul{
-    list-style: none;
-}
+
 aside a{
     text-align: center;
     color: white;
@@ -220,17 +207,4 @@ footer p{
     .col-10{width: 83.33%;}
     .col-11{width: 91.66%;}
     .col-12{width: 100%;}
-
-    nav li{
-        float: left;
-    }
-    .contenedor{
-        width: 90%;
-    }
-    nav li a b{
-        display: none;
-    }
-    nav li a:hover b{
-        display: inline;
-    }
 }
