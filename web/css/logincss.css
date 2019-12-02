@@ -1,0 +1,73 @@
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background: url(../imagenes/medicamentos.jpg) no-repeat center top;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+        
+}
+.login-box {
+    width: 320px;
+    height: 420px;
+    background: #DFDFDF;
+    color: black;
+    top: 60%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    border-radius: 15px;
+    padding: 10px 30px;
+    font-size: 19px;
+}
+
+.login-box .avatar{
+    width: 100px;
+    height: 100px;
+ 
+    position: absolute;
+    top: 50px;
+    left: calc(50% - 65px);
+}
+
+.login-box h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.login-box label{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+}
+.login-box input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"]{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: black;
+    font-size: 16px;
+    
+}
+
+input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    
+    font-size: 18px;
+    border-radius: 20px;
+}

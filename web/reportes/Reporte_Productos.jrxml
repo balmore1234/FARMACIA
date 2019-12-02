@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5abd58c2-6581-4d8a-bba3-4eaafd10d47b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="43"/>
+	<parameter name="IdCategoria" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select 
+                       IdProducto,p.Nombre,precio,Fecha_Vencimiento,cate.Nombre as Categoria, esta.Nombre as Presentaciones
+                        from Inventario p
+                        inner join Categoria  cate on cate.IdCategoria = p.IdCategoria
+                        inner join Presentaciones  esta on esta.IdPresentacion = p.IdPresentacion
+and $P{IdCategoria}]]>
+	</queryString>
+	<field name="IdProducto" class="java.lang.Integer"/>
+	<field name="Nombre" class="java.lang.String"/>
+	<field name="precio" class="java.math.BigDecimal"/>
+	<field name="Fecha_Vencimiento" class="java.sql.Timestamp"/>
+	<field name="IdCategoria" class="java.lang.Integer"/>
+	<field name="IdPresentacion" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="34" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="21" y="12" width="57" height="20" uuid="411ea005-df68-44da-961f-37ec6dd8dc10"/>
+				<text><![CDATA[IdProducto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="12" width="100" height="20" uuid="a8c8bc9a-e1f2-417d-ad50-1631bd3c5767"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="206" y="12" width="56" height="20" uuid="3ac42e5c-6f10-44a1-aec3-bc666ddf9014"/>
+				<text><![CDATA[precio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="273" y="12" width="82" height="20" uuid="a0ae2362-134e-4c0d-8839-cdc10b3b0866"/>
+				<text><![CDATA[Fecha_Vencimiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="367" y="12" width="71" height="20" uuid="975db355-5fa6-4997-b2fb-51fc0395c915"/>
+				<text><![CDATA[IdCategoria]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="12" width="86" height="20" uuid="7e57110c-a119-4601-a175-fc43a903d0b8"/>
+				<text><![CDATA[IdPresentacion]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="21" y="9" width="74" height="20" uuid="1c3c0ac5-43a8-4de5-987e-3d8b27d5aa06"/>
+				<textFieldExpression><![CDATA[$F{IdProducto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="106" y="9" width="100" height="20" uuid="98caa051-4f7a-4683-b575-e418752dceb8"/>
+				<textFieldExpression><![CDATA[$F{Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="206" y="9" width="56" height="20" uuid="5bdacf89-334f-4007-b032-9cac04cc361c"/>
+				<textFieldExpression><![CDATA[$F{precio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="273" y="14" width="65" height="20" uuid="07459e09-4012-4207-80d2-58acde36715a"/>
+				<textFieldExpression><![CDATA[$F{Fecha_Vencimiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="351" y="14" width="87" height="20" uuid="7824e50b-0354-4488-bff2-71813846d0aa"/>
+				<textFieldExpression><![CDATA[$F{IdCategoria}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="14" width="86" height="20" uuid="44d7ac92-40d4-4f38-adbd-47217039dc02"/>
+				<textFieldExpression><![CDATA[$F{IdPresentacion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
